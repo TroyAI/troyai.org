@@ -15,7 +15,9 @@
         <a class="nav-link" href="#">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Join</a>
+        <%= link_to new_user_registration_path, class: 'nav-link' do %>
+          Join
+        <% end %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">People</a>

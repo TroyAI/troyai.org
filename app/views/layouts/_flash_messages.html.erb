@@ -1,0 +1,17 @@
+<% position_modifier = 50 %>
+<% if notice %>
+    <p class="notice alert alert-success alert-dismissible position-fixed m-3 z-front">
+        <%= notice %>
+        <button type="button" data-bs-dismiss="alert" aria-label="Close" class='close btn btn-transparent'>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-warning alert-dismissible position-fixed m-3 z-front">
+        <%= alert %>
+        <button type="button" data-bs-dismiss="alert" aria-label="Close" class='close btn btn-transparent'>
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </p>
+<% end %>
