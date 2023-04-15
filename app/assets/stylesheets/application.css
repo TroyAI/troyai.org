@@ -24,3 +24,22 @@
     font-family: monospace, monospace;
     font-size: 2em;
 }
+
+.image-section {
+    background: url('/assets/aiplaceboimage.jpg') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    width: 100%;
+    height: 30em;
+    overflow: auto;
+}
+
+#image-text {
+    margin-top: 1em;
+    margin-left: 1em;
+    font-size: 5em;
+}
