@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.blue-gradient {
+    /* Use a linear gradient background */
+    background-image: linear-gradient(45deg, #0074D9, #7FDBFF);
+}
+
+#navbar-title {
+    margin: 0;
+    font-family: monospace, monospace;
+    font-size: 2em;
+}
