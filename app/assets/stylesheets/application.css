@@ -99,3 +99,17 @@ body {
 body::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+
+#club-description {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#club-description::after {
+    content: '|';
+    animation: blink-caret 0.75s infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
