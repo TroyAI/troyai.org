@@ -1,24 +1,7 @@
-# README
+# Troy AI Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the (very in development) Troy AI club website.
 
-Things you may want to cover:
+# How to contribute
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Most of the code is in the `app` folder (`app/views` or `app/controllers`)
