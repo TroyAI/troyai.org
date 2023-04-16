@@ -125,3 +125,7 @@ body::-webkit-scrollbar {
 .max-w-100 {
     max-width: 100%;
 }
+
+.z-10 {
+    z-index: 10;
+}
