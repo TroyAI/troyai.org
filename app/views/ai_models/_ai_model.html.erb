@@ -1,0 +1,27 @@
+<div id="<%= dom_id ai_model %>">
+  <p>
+    <strong>File:</strong>
+    <%= link_to ai_model.file.filename, ai_model.file if ai_model.file.attached? %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= ai_model.user_id %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= ai_model.description %>
+  </p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= ai_model.name %>
+  </p>
+
+  <p>
+    <strong>Score:</strong>
+    <%= ai_model.score %>
+  </p>
+
+</div>
