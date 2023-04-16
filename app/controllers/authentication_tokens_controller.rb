@@ -13,10 +13,6 @@ class AuthenticationTokensController < ApplicationController
     @token = current_user.authentication_token.new
     @token.token = token_string
 
-    p 'token.token is', @token.token
-
-    p 'END OF GENERATE'
-
     @token.save!
 
     render 'generate_post'
