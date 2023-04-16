@@ -7,8 +7,10 @@ function playTypingAnimation() {
 
     function typeText() {
       if (textToType.length > 0) {
-        typedText.innerHTML += textToType.charAt(0);
-        textToType = textToType.substring(1);
+        if (window.scrollY >= 100) {
+          typedText.innerHTML += textToType.charAt(0);
+          textToType = textToType.substring(1);
+        }
         setTimeout(typeText, 30);
       }
     }
