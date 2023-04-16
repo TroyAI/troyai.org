@@ -1,0 +1,8 @@
+<div class='ms-a me-a container rounded bg-light p-3 mt-5 border'>
+    <h2>Generate an authentication token</h2>
+    <p>You must generate an authentication token to be able to automatically access the model storage API</p>
+    
+    <%= form_with(url: '/users/tokens/generate_post/',  method: :post, local: true, data: { turbo: false }) do |form| %>
+        <% form.submit 'Generate' %>
+    <% end %>
+</div>
