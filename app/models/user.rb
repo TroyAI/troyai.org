@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :ai_model
+
+  validates :email, format: { with: /\A\d+@fjuhsd\.org\z/, message: "must be an school email."}
 end
