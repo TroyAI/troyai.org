@@ -113,3 +113,15 @@ body::-webkit-scrollbar {
     from, to { border-color: transparent }
     50% { border-color: black }
 }
+
+.image-card-area {
+    height: 15em;
+}
+
+.link-card {
+    height: 95%;
+}
+
+.max-w-100 {
+    max-width: 100%;
+}
