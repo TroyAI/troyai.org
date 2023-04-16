@@ -1,5 +1,6 @@
 class AiModelsController < ApplicationController
   before_action :set_ai_model, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /ai_models or /ai_models.json
   def index
