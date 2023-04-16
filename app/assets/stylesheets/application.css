@@ -50,7 +50,7 @@
     font-size: 5em;
 }
 
-.no-underline {
+a {
     text-decoration: none;
 }
 
@@ -128,4 +128,8 @@ body::-webkit-scrollbar {
 
 .z-10 {
     z-index: 10;
+}
+
+#image-section {
+    height: 25em;
 }
