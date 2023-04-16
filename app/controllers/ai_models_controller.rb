@@ -1,6 +1,8 @@
 class AiModelsController < ApplicationController
+  protect_from_forgery with: :null_session
+
   before_action :set_ai_model, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!
+  before_action :authenticated_or_has_token
 
   # GET /ai_models or /ai_models.json
   def index
@@ -67,5 +69,21 @@ class AiModelsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def ai_model_params
       params.require(:ai_model).permit(:file, :user_id, :description, :name, :score)
+    end
+
+    def authenticated_or_has_token
+      # validate token
+      if params[:token].nil?
+        authenticate_user!
+        protect_from_forgery!
+        return
+      end
+
+      token = AuthenticationToken.find_by(token: token_string)
+      if token.nil?
+        errors.add("invalid token")
+      else
+        current_user = token.user
+      end
     end
 end
