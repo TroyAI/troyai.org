@@ -47,7 +47,7 @@ class AiModelsController < ApplicationController
 
     token = AuthenticationToken.find_by(token: data['token'])
     if token.nil?
-      return render plain: "ERR_TOKEN_NIL"
+      return render plain: "ERR_TOKEN_NOT_FOUND"
     end
     data['ai_model']['user_id'] = token.user_id
 

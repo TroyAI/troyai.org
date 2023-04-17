@@ -11,7 +11,7 @@ function playTypingAnimation() {
           typedText.innerHTML += textToType.charAt(0);
           textToType = textToType.substring(1);
         }
-        setTimeout(typeText, 30);
+        setTimeout(typeText, 25);
       }
     }
     
