@@ -1,6 +1,16 @@
 let ht_imageText  = document.getElementById('image-text')
 let ht_imageText2 = document.getElementById('image-text-2')
 
+let choices = [
+    "We're the best.",
+    "Just click it.",
+    "Do it nerd."
+];
+
+let index = Math.floor(Math.random() * choices.length);
+
+ht_imageText2.innerText = choices[index];
+
 function randomCharacter() {
     let characters = 'abcdefhijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTYVWXYZ';
     return characters[Math.floor(Math.random() * characters.length)]
@@ -39,5 +49,10 @@ async function main() {
     await hackerType(ht_imageText, true);
     ht_imageText.innerHTML = "<a href='/users/sign_up'>Join</a> Troy's AI club.";
 }
+
+ht_imageText2.addEventListener('mouseover', function() {
+    ht_imageText2.innerText = choices[Math.floor(Math.random() * choices.length)];
+    hackerType(ht_imageText2);
+});
 
 main();
