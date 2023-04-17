@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   post 'users/tokens/generate_post/', to: 'authentication_tokens#generate'
   get  'users/tokens/generate/', to: 'authentication_tokens#generate_get'
+
+  get '/discord', to: 'index#discord'
+
+  post '/ai_models/create_auto', to: 'ai_models#create_auto'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 end

@@ -1,8 +1,8 @@
 class AiModelsController < ApplicationController
-  protect_from_forgery with: :null_session
+  protect_from_forgery except: :create_auto
 
   before_action :set_ai_model, only: %i[ show edit update destroy ]
-  before_action :authenticated_or_has_token
+  before_action :authenticate_user!, except: :create_auto
 
   # GET /ai_models or /ai_models.json
   def index
@@ -15,6 +15,8 @@ class AiModelsController < ApplicationController
 
   # GET /ai_models/new
   def new
+    p "P NEW"
+    p params
     @ai_model = AiModel.new
   end
 
@@ -24,6 +26,8 @@ class AiModelsController < ApplicationController
 
   # POST /ai_models or /ai_models.json
   def create
+    p "create"
+    p params
     @ai_model = AiModel.new(ai_model_params)
 
     respond_to do |format|
@@ -34,6 +38,25 @@ class AiModelsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @ai_model.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def create_auto
+    data = JSON.parse params[:json].read
+    data['ai_model']['file'] = params[:upload_file]
+
+    token = AuthenticationToken.find_by(token: data['token'])
+    if token.nil?
+      return render plain: "ERR_TOKEN_NIL"
+    end
+    data['ai_model']['user_id'] = token.user_id
+
+    ai_model = AiModel.new(data['ai_model'])
+    
+    if ai_model.save
+      return render plain: "OK"
+    else
+      return render plain: "ERR_SAVE"
     end
   end
 
@@ -69,21 +92,5 @@ class AiModelsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def ai_model_params
       params.require(:ai_model).permit(:file, :user_id, :description, :name, :score)
-    end
-
-    def authenticated_or_has_token
-      # validate token
-      if params[:token].nil?
-        authenticate_user!
-        protect_from_forgery!
-        return
-      end
-
-      token = AuthenticationToken.find_by(token: token_string)
-      if token.nil?
-        errors.add("invalid token")
-      else
-        current_user = token.user
-      end
     end
 end
