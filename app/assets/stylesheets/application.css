@@ -37,13 +37,23 @@
     overflow: auto;
 }
 
+
+@font-face {
+  font-family: UbuntuMonoBold;
+  src: url(/assets/UbuntuMonoBold.ttf);
+}
+
 #image-text {
+    font-family: UbuntuMonoBold;
+
     margin-top: 1em;
     margin-left: 1em;
     font-size: 5em;
 }
 
 #image-text-2 {
+    font-family: UbuntuMonoBold;
+
     margin-top: 0.2em;
     margin-left: 2.6em;
     font-size: 3em;

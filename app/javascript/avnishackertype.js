@@ -22,7 +22,7 @@ function sleep(ms) {
 
 async function hackerType(element, hasJoinLink) {
     let originalText = element.innerText;
-    let numIters = 10;
+    let numIters = 3;
 
     for (let i = 0; i < originalText.length; i++) {
         for (let v = 0; v < numIters; v++) {
@@ -35,24 +35,30 @@ async function hackerType(element, hasJoinLink) {
             } else {
                 element.innerText = currentText;
             }
-            await new Promise(r => setTimeout(r, 10));
+            await new Promise(r => setTimeout(r, 30));
         }
     }
 
     element.innerText = originalText;
 }
 
+var imageText2AnimationPlaying = false;
+
 async function main() {
     await new Promise(r => setTimeout(r, 1000));
-    
-    hackerType(ht_imageText2, false);
-    await hackerType(ht_imageText, true);
+    imageText2AnimationPlaying = true;
+    await Promise.all([hackerType(ht_imageText2, false), hackerType(ht_imageText, true)]);
+    imageText2AnimationPlaying = false;
     ht_imageText.innerHTML = "<a href='/users/sign_up'>Join</a> Troy AI Club.";
 }
 
-ht_imageText2.addEventListener('mouseover', function() {
-    ht_imageText2.innerText = choices[Math.floor(Math.random() * choices.length)];
-    hackerType(ht_imageText2);
+ht_imageText2.addEventListener('mouseover', async function() {
+    if (!imageText2AnimationPlaying) {
+        imageText2AnimationPlaying = true;
+        ht_imageText2.innerText = choices[Math.floor(Math.random() * choices.length)];
+        await hackerType(ht_imageText2);
+        imageText2AnimationPlaying = false;
+    }
 });
 
 main();
