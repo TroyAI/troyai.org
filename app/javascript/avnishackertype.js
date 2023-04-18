@@ -47,7 +47,7 @@ async function main() {
     
     hackerType(ht_imageText2, false);
     await hackerType(ht_imageText, true);
-    ht_imageText.innerHTML = "<a href='/users/sign_up'>Join</a> Troy's AI club.";
+    ht_imageText.innerHTML = "<a href='/users/sign_up'>Join</a> Troy AI Club.";
 }
 
 ht_imageText2.addEventListener('mouseover', function() {
