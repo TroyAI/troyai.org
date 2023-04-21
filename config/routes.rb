@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'people/', to: 'index#people'
 
   post 'users/tokens/generate_post/', to: 'authentication_tokens#generate'
-  get  'users/tokens/generate/', to: 'authentication_tokens#generate_get'
+  get  'users/tokens/generate/', to: 'authentication_tokens#generate_get', as: :generate_token
+  get 'users/:id/models', to: 'ai_models#user_models', as: :user_models
 
   get '/discord', to: 'index#discord'
 

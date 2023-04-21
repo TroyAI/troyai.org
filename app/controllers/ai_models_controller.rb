@@ -7,6 +7,7 @@ class AiModelsController < ApplicationController
   # GET /ai_models or /ai_models.json
   def index
     @ai_models = AiModel.all
+    return render 'index', locals: { title: 'Model Library' }
   end
 
   # GET /ai_models/new
@@ -35,6 +36,12 @@ class AiModelsController < ApplicationController
     else
       return render plain: "ERR_SAVE"
     end
+  end
+
+  def user_models
+    user = User.find(params[:id])
+    @ai_models = AiModel.where(user: user)
+    return render 'index', locals: { title: "Models for #{user.email}" }
   end
 
   private

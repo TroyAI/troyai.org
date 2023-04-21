@@ -138,3 +138,7 @@ body::-webkit-scrollbar {
 .z-10 {
     z-index: 10;
 }
+
+.navbar .dropdown-menu {
+    position: absolute !important;
+}
