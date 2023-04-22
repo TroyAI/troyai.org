@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Ai models</h1>
+<h1 class="text-center mb-3 mt-3">
+  <%= title %>
+</h1>
 
 <div id="ai_models">
   <% @ai_models.each do |ai_model| %>
     <%= render ai_model %>
-    <p>
-      <%= link_to "Show this ai model", ai_model %>
-    </p>
   <% end %>
 </div>
 
-<%= link_to "New ai model", new_ai_model_path %>
+<%= javascript_include_tag 'copybutton' %>

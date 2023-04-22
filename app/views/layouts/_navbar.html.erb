@@ -1,4 +1,4 @@
-<nav class="navbar position-fixed top-0 w-100 navbar-expand-lg blue-gradient ps-2 p-0 z-10 overflow-hidden">
+<nav class="navbar position-fixed top-0 w-100 navbar-expand-lg blue-gradient ps-2 p-0 z-10">
   <a class="navbar-brand" href="#" id='navbar-title'><b>Troy AI</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,21 +7,37 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ms-auto">
       <li class="nav-item active">
-        <%= link_to root_path, class: 'nav-link' do %>
-          Home
-        <% end %>
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/#about">About</a>
       </li>
       <li class="nav-item">
-        <%= link_to new_user_registration_path, class: 'nav-link' do %>
-          Join
-        <% end %>
-      </li>
-      <li class="nav-item">
         <%= link_to 'People', people_path, class: 'nav-link' %>
       </li>
+      <% if not user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'Log In', new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Join', new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <div class="vr ms-2 me-2"></div>
+        <li class="nav-item dropdown me-2 ms-2">
+          <a class="nav-link dropdown-toggle z-10" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.email %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end z-10" aria-labelledby="navbarDropdown">
+            <li><%= link_to 'Generate API Token', generate_token_path, class: 'dropdown-item' %></li>
+            <li><%= link_to 'My Models', user_models_path(current_user), class: 'dropdown-item' %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, class: 'text-danger dropdown-item', data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to sign out?' } %></li>
+          </ul>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

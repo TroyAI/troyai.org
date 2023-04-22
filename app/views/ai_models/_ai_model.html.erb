@@ -1,27 +1,29 @@
-<div id="<%= dom_id ai_model %>">
-  <p>
-    <strong>File:</strong>
-    <%= link_to ai_model.file.filename, ai_model.file if ai_model.file.attached? %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= ai_model.user_id %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= ai_model.description %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= ai_model.name %>
-  </p>
-
-  <p>
-    <strong>Score:</strong>
-    <%= ai_model.score %>
-  </p>
-
+<div id="<%= dom_id ai_model %>", class="container p-2 m-4 rounded border bg-light">
+  <div class="row">
+    <div class="col m-2">
+      <p>
+        <%= ai_model.description %>
+      </p>
+    </div>
+    <div class="vr border p-1"></div>
+    <div class="col m-2 position-relative">
+      <p>
+        <%= link_to 'Download this model for unpickling', ai_model.file if ai_model.file.attached? %>
+      </p>
+      <p>
+        <strong>Owner:</strong> <%= ai_model.user.email %>
+      </p>
+      <p>
+        <strong>Name:</strong> <%= ai_model.name %>
+      </p>
+      <div class="d-flex justify-content-between">
+        <p>
+          <strong>Score:</strong> <%= ai_model.score %>
+        </p>
+        <p class="d-flex justify-content-end">
+          <button class="btn btn-primary copy-button" data-copy-button="<%= rails_blob_url ai_model.file %>">Copy Link</button>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

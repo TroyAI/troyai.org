@@ -7,6 +7,7 @@
     <div class="field form-group mb-2">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      <small class="form-text text-muted">You'll be sent a confirmation email to this address, and it must be your school email.</small>
     </div>
 
     <div class="field form-group mb-2">
@@ -22,8 +23,11 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class: 'btn btn-primary' %>
+    <!-- this is good formatting -->
+    <br><br>
+
+    <div class="actions d-flex justify-content-center">
+      <%= f.submit "Sign up", class: 'btn btn-primary ' %>
     </div>
   <% end %>
 
