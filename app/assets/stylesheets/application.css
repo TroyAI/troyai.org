@@ -138,3 +138,25 @@ body::-webkit-scrollbar {
 .z-10 {
     z-index: 10;
 }
+.profile-pics{
+   height: 100%;
+   width:100%;
+   margin-bottom: 1em;
+}
+
+.contact{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#person-page{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#profile-cards{
+    background-color: lightgray;
+}
+
+
+

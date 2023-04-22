@@ -4,6 +4,7 @@ let ht_imageText2 = document.getElementById('image-text-2')
 let choices = [
     "We're the best.",
     "Just click it.",
+    "It is the dark-mode side.",
     "Do it nerd."
 ];
 
