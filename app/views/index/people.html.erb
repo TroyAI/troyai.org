@@ -1,2 +1,125 @@
-<%# TODO %>
-todo people section
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<%= javascript_include_tag 'people-gallery.js' %>
+
+<section id="profile-cards">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div id="First slide" style="display: flex; justify-content: space-evenly;">
+                    <div class="card" style="width: 18em; margin: 2em;">
+                        <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-1">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">Some Fool</h5>
+                            <p class="card-text" style="text-align: center;">These are comically average human beings, 
+                                sometimes they have more than one brain cell. 
+                                Please do not assume they can help you. 
+                                We made fancy titles so they can get into any college that is willing accept.</p>
+                            <div class="contact">
+                                <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18em; margin: 2em;">
+                        <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-2">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">Some Fool</h5>
+                            <p class="card-text" style="text-align: center;">These are comically average human beings, 
+                                sometimes they have more than one brain cell. 
+                                Please do not assume they can help you. 
+                                We made fancy titles so they can get into any college that is willing accept.</p>
+                            <div class="contact">
+                                <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18em; margin: 2em;">
+                        <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-3">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">Some Fool</h5>
+                            <p class="card-text" style="text-align: center;">These are comically average human beings, 
+                                sometimes they have more than one brain cell. 
+                                Please do not assume they can help you. 
+                                We made fancy titles so they can get into any college that is willing accept.</p>
+                            <div class="contact">
+                                <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div id="Second slide" style="display: flex; justify-content: space-evenly;">
+                        <div class="card" style="width: 18em; margin: 2em;">
+                            <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-4">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">Some Fool Pt.2</h5>
+                                <p class="card-text" style="text-align: center;">111These are comically average human beings, 
+                                    sometimes they have more than one brain cell. 
+                                    Please do not assume they can help you. 
+                                    We made fancy titles so they can get into any college that is willing accept.</p>
+                                <div class="contact">
+                                    <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                    <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card" style="width: 18em; margin: 2em;">
+                            <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-5">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">Some Fool Pt. 2</h5>
+                                <p class="card-text" style="text-align: center;">These are comically average human beings, 
+                                    sometimes they have more than one brain cell. 
+                                    Please do not assume they can help you. 
+                                    We made fancy titles so they can get into any college that is willing accept.</p>
+                                <div class="contact">
+                                    <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                    <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="width: 18em; margin: 2em;">
+                            <img class="card-img-top" src="/assets/defaultprofile.jpeg" alt="person-6">
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">Some Fool Pt. 2</h5>
+                                <p class="card-text" style="text-align: center;">These are comically average human beings, 
+                                    sometimes they have more than one brain cell. 
+                                    Please do not assume they can help you. 
+                                    We made fancy titles so they can get into any college that is willing accept.</p>
+                                <div class="contact">
+                                    <a href="#" class="btn btn-primary" style="text-align: center; ">Kaggle</a>
+                                    <a href="#" class="btn btn-primary" style="text-align: center;">Discord</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span id="my-arrow" class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+        
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span id="my-arrow2" class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+</section>
+
+
