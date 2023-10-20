@@ -25,7 +25,7 @@ module TroyaiOrg
       port: 587,
       domain: 'exdomain.com',
       user_name: 'troyhigh.aiclub@gmail.com',
-      password: Rails.application.credentials.gmail[:password],
+      password: "REPLACEME", # Rails.application.credentials.gmail[:password],
       authentication: 'plain',
       enable_starttls_auto: true,
       open_timeout: 5,

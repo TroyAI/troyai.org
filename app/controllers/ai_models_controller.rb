@@ -29,7 +29,13 @@ class AiModelsController < ApplicationController
     end
     data['ai_model']['user_id'] = token.user_id
 
-    ai_model = AiModel.new(data['ai_model'])
+    ai_model = AiModel.new data['ai_model']
+
+    previous_model = AiModel.find_by name: ai_model.name, user: token.user_id
+
+    unless previous_model.nil?
+      previous_model.delete
+    end
     
     if ai_model.save
       return render plain: "OK"
